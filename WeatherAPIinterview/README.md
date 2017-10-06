@@ -1,4 +1,4 @@
-
+VERSION 0.2
 
 # WeatherAPIinterview
 
@@ -6,7 +6,10 @@ on command prompt enter the city name and state/country
 
 ## Usage
 
-$node weatherApi.js london uk
+1. $node weatherApi.js 
+
+2. Open Browser and type the following
+localhost:3000/weather/london
 
 
 ## Developing
