@@ -1,10 +1,13 @@
-VERSION 0.2
+VERSION 0.3
 
 # WeatherAPIinterview
 
-on command prompt enter the city name and state/country
+on browser, use localhost:3000/weather/london to get the weather information
+
+ESLint used for cleaning
 
 ## Usage
+ESLint used for cleaning
 
 1. $node weatherApi.js 
 
