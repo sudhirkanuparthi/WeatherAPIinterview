@@ -1,13 +1,16 @@
-VERSION 0.3
+VERSION 0.4
 
 # WeatherAPIinterview
 
 on browser, use localhost:3000/weather/london to get the weather information
-
+Winston for logging
 ESLint used for cleaning
+Jasmine for testing service
 
 ## Usage
-ESLint used for cleaning
+Implemented Winston for logging
+Implemented ESLint used for cleaning
+Implemented Jasmine for testing 
 
 1. $node weatherApi.js 
 
