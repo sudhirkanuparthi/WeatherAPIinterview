@@ -3,10 +3,43 @@
  * IMPORT THE REQUIRED PACKAGES
  * version 0.3
  */
-var weatherApp = require('express')();
+var express=require('express');
+var weatherApp = express();
 var bodyParser = require('body-parser');
 var request = require('request');
 var Winston = require('winston');
+
+var argv = require('minimist')(process.argv.slice(2));
+var swagger = require("swagger-node-express");
+
+var subpath = express();
+weatherApp.use(bodyParser());
+weatherApp.use("/v1", subpath);
+swagger.setAppHandler(subpath);
+
+weatherApp.use(express.static('dist'));
+
+swagger.setApiInfo({
+    title: "example API",
+    description: "API for calling yahoo service for weather info by giving the input of city name",
+    termsOfServiceUrl: "",
+    contact: "suddco@icloud.com",
+    license: "",
+    licenseUrl: ""
+});
+
+subpath.get('/', function (req, res) {
+    res.sendfile(__dirname + '/dist/index.html');
+});
+swagger.configureSwaggerPaths('', 'api-docs', '');
+
+var domain = 'localhost';
+if(argv.domain !== undefined)
+    domain = argv.domain;
+else
+    console.log('No --domain=xxx specified, taking default hostname "localhost".');
+var applicationUrl = 'http://' + domain;
+swagger.configure(applicationUrl, '1.0.0');
 
 module.exports = {};
 

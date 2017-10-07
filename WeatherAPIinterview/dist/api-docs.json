@@ -1,0 +1,51 @@
+{  
+   "swagger":"2.0",
+   "info":{  
+      "version":"1.0.0",
+      "title":"weatherAPI spec",
+      "description":"weatherAPI spec for Swagger",
+      "termsOfService":"http://swagger.io/terms/"
+   },
+   "basePath":"/",
+   "tags":[  
+      {  
+         "name":"Tag1",
+         "description":"API showcasing how to do call for the weather"
+      }
+   ],
+   "schemes":[  
+      "http"
+   ],
+   "paths":{  
+      "/weather/{city}":{  
+         "get":{  
+            "tags":[  
+               "Tag1"
+            ],
+            "description":"Returns the status of something",
+            "operationId":"city",
+            "produces":[  
+               "application/json"
+            ],
+            "parameters":[  
+               {  
+                  "name":"city",
+                  "in":"path",
+                  "description":"city to fetch",
+                  "required":true,
+                  "type":"string"
+               }
+            ],
+            "responses":{  
+               "200":{  
+                  "description":"response",
+                  "schema":{  
+                     "$ref":"#/definitions/response1"
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
